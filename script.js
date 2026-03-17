@@ -1,14 +1,23 @@
+function mostrar(res) {
+    document.getElementById("resultado").innerText =
+        JSON.stringify(res, null, 2);
+}
+
 const usuarios1 = [
     { id: 1, nombre: "Ana", edad: 20 },
     { id: 2, nombre: "Juan", edad: 15 },
     { id: 3, nombre: "Pedro", edad: 30 }
 ];
 //1
+let palabra = "sante"
 function formatearNombre (str){
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
-let palabra = "sante"
-console.log(formatearNombre(palabra))
+
+function ej1(){
+    mostrar(formatearNombre("sante"));
+}
+
 
 //2
 function contarLetras(str) {
@@ -21,8 +30,11 @@ function contarLetras(str) {
     return contador;
 }
 
-palabra = "que onda pa";
-console.log(contarLetras(palabra))
+function ej2(){
+    palabra = "que onda pa";
+    mostrar(contarLetras(palabra));
+}
+
 
 //3
 function maximo(num1, num2, num3) {
@@ -38,10 +50,10 @@ function maximo(num1, num2, num3) {
 
     return max;
 }
-let num1 = 500;
-let num2 = 135;
-let num3 = 3454;
-console.log(maximo(num1, num2, num3))
+
+function ej3(){
+    mostrar(maximo(5000,135,3454));
+}
 
 //4
 function validarPassword() {
@@ -65,7 +77,9 @@ let password = "dantemix9"
   
   return valido;
 }
-console.log(validarPassword())
+function ej4(){
+    mostrar(validarPassword());
+}
 //5
 function sumarArray(){
     let numeros = [1, 2, 3, 4, 5909]
@@ -77,7 +91,9 @@ function sumarArray(){
 
     return suma
 }
- console.log(sumarArray())
+function ej5(){
+    mostrar(sumarArray());
+}
  //6
  function mayorNumero(){
     let numeros = [1, 345345335, 3, 4, 5909]
@@ -91,7 +107,10 @@ function sumarArray(){
     return mayor
 }
 
-console.log(mayorNumero())
+function ej6(){
+    mostrar(mayorNumero());
+}
+
 //7
 function obtenerPares(){
     let numeros = [10, 20, 35, 40, 55];
@@ -105,7 +124,9 @@ function obtenerPares(){
 
     return pares;
 }
-console.log(obtenerPares());
+function ej7(){
+    mostrar(obtenerPares());
+}
 //8
 const usuario = {
     nombre: "Ana",
@@ -115,13 +136,18 @@ const usuario = {
 function descripcionUsuario({ nombre, edad }) {
     return `${nombre} tiene ${edad} años`;
 }
-console.log(descripcionUsuario(usuario));
+function ej8(){
+    mostrar(descripcionUsuario(usuario));
+}
+
 //9
 function activarUsuario(usuario) {
     usuario.activo = true;
+} 
+function ej9(){
+    activarUsuario(usuario);
+    mostrar(usuario.activo);
 }
-activarUsuario(usuario) 
-console.log(usuario.activo)
 //10
 const productos = [
     { nombre: "Mouse", precio: 10 },
@@ -139,7 +165,9 @@ function precioTotal(productos) {
     return total;
 }
 
-console.log(precioTotal(productos));
+function ej10(){
+    mostrar(precioTotal(productos));
+}
 //11
 const usuarios = [
 
@@ -161,7 +189,9 @@ function obtenerNombres(usuarios) {
     return nombres;
 }
 
-console.log(obtenerNombres(usuarios));
+function ej11(){
+    mostrar(obtenerNombres(usuarios));
+}
 //12
 const pibes = [
     { nombre: "Juan", edad: 25 },
@@ -181,13 +211,18 @@ function obtenerMayores(pibes) {
     return mayores;
 }
 
-console.log(obtenerMayores(pibes));
+function ej12(){
+    mostrar(obtenerMayores(pibes));
+}
+
 //13
 const totalEdades = pibes.reduce((acumulador, pibe) => {
     return acumulador + pibe.edad;
 }, 0);
 
-console.log(totalEdades);
+function ej13(){
+    mostrar(totalEdades);
+}
 //14
 const producto = {
 
@@ -198,33 +233,46 @@ precio:1000
 }
 function extraerPrecio({precio})
 {
-    console.log(precio)
+    return precio
 }
-extraerPrecio(producto)
+function ej14(){
+    mostrar(extraerPrecio(producto));
+}
 //15
 const productoConStock = {
     ...producto,
     stock: 5
 };
 
-console.log(productoConStock);
+function ej15(){
+    mostrar(productoConStock);
+}
 
 //16
 function buscarProducto(productos, nombre) {
     return productos.find(p => p.nombre === nombre);
+}
+function ej16(){
+    mostrar(buscarProducto(productos, "Mouse"));
 }
 
 //17
 function productosCaros(productos) {
     return productos.filter(p => p.precio > 50);
 }
+function ej17(){
+    mostrar(productosCaros(productos));
+}
+
 //18
 function promedio(numeros) {
     let suma = numeros.reduce((acc, num) => acc + num, 0);
     return suma / numeros.length;
 }
+function ej18(){
+    mostrar(promedio([10, 8, 6, 9]));
+}
 
-console.log(promedio([10, 8, 6, 9])); 
 
 //19
 function obtenerUsuarios() {
@@ -250,8 +298,22 @@ function crearUsuario(nombre, edad) {
     return nuevoUsuario;
 }
 
-console.log(obtenerUsuarios());
-console.log(obtenerUsuarioPorId(2));
-console.log(obtenerMayores());
-console.log(crearUsuario("Lucas", 22));
-console.log(obtenerUsuarios());
+function ej19_1(){
+    mostrar(obtenerUsuarios());
+}
+
+
+function ej19_2(){
+    mostrar(obtenerUsuarioPorId(2));
+}
+
+
+function ej19_3(){
+    mostrar(obtenerMayores());
+}
+
+
+function ej19_4(){
+    mostrar(crearUsuario("Lucas", 22));
+}
+
